@@ -86,7 +86,7 @@ fun AppNavGraph(
                 onContinueShopping = {
                     cartViewModel.clear()
                     navController.navigate(Routes.PRODUCT_LIST) {
-                        popUpTo(0) { inclusive = true }
+                        popUpTo(Routes.PRODUCT_LIST) { inclusive = true }
                     }
                 }
             )
