@@ -4,6 +4,12 @@ appId: com.example.stackdemo
 ---
 - launchApp:
     clearState: true
+# Slow emulators can raise a system ANR dialog ("... isn't responding") that hides the app.
+- runFlow:
+    when:
+      visible: ".*isn't responding.*"
+    commands:
+      - tapOn: "Wait"
 - extendedWaitUntil:
     visible: "Add to cart"
     timeout: 60000
