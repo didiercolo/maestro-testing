@@ -84,10 +84,10 @@ fun AppNavGraph(
                 orderNumber        = orderNumber,
                 cartViewModel      = cartViewModel,
                 onContinueShopping = {
-                    cartViewModel.clear()
                     navController.navigate(Routes.PRODUCT_LIST) {
                         popUpTo(Routes.PRODUCT_LIST) { inclusive = true }
                     }
+                    cartViewModel.clear()
                 }
             )
         }

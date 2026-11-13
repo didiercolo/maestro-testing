@@ -1,5 +1,6 @@
 package com.example.stackdemo.ui.confirmation
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -9,6 +10,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.stackdemo.ui.cart.CartViewModel
 import com.example.stackdemo.ui.checkout.OrderSummaryCard
+import com.example.stackdemo.ui.common.ResponsiveTwoPane
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -22,21 +24,24 @@ fun ConfirmationScreen(
     val snackbarState = remember { SnackbarHostState() }
     val scope         = rememberCoroutineScope()
 
+    // Back from the confirmation screen behaves like "Continue Shopping": the order is placed,
+    // so the cart must be cleared rather than leaving the user with already-ordered items.
+    BackHandler(onBack = onContinueShopping)
+
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarState) },
         topBar = {
             TopAppBar(title = { Text("StackDemo", fontWeight = FontWeight.Bold) })
         }
     ) { padding ->
-        Row(
+        ResponsiveTwoPane(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .padding(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+            first = { paneModifier ->
             Column(
-                modifier = Modifier.weight(1f),
+                modifier = paneModifier,
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Text(
@@ -64,12 +69,14 @@ fun ConfirmationScreen(
                     Text("CONTINUE SHOPPING »")
                 }
             }
-
+            },
+            second = { paneModifier ->
             OrderSummaryCard(
                 items    = cartState.items,
                 total    = cartState.subtotal,
-                modifier = Modifier.weight(1f)
+                modifier = paneModifier
             )
-        }
+            }
+        )
     }
 }

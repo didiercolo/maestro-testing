@@ -1,8 +1,6 @@
 package com.example.stackdemo.ui.checkout
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -13,6 +11,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.stackdemo.data.model.CartItem
 import com.example.stackdemo.data.model.Order
 import com.example.stackdemo.ui.cart.CartViewModel
+import com.example.stackdemo.ui.common.ResponsiveTwoPane
 import com.example.stackdemo.ui.theme.BStackDark
 import com.example.stackdemo.ui.theme.BStackWhite
 import java.util.Locale
@@ -32,17 +31,14 @@ fun CheckoutScreen(
             TopAppBar(title = { Text("StackDemo", fontWeight = FontWeight.Bold) })
         }
     ) { padding ->
-        Row(
+        ResponsiveTwoPane(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .padding(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+            first = { paneModifier ->
             Column(
-                modifier = Modifier
-                    .weight(1f)
-                    .verticalScroll(rememberScrollState()),
+                modifier = paneModifier,
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Text(
@@ -74,6 +70,7 @@ fun CheckoutScreen(
                             onOrderPlaced(order)
                         }
                     },
+                    enabled  = cartState.items.isNotEmpty(),
                     modifier = Modifier.fillMaxWidth(),
                     colors   = ButtonDefaults.buttonColors(
                         containerColor = BStackDark,
@@ -83,13 +80,15 @@ fun CheckoutScreen(
                     Text("SUBMIT")
                 }
             }
-
+            },
+            second = { paneModifier ->
             OrderSummaryCard(
                 items    = cartState.items,
                 total    = cartState.subtotal,
-                modifier = Modifier.weight(1f)
+                modifier = paneModifier
             )
-        }
+            }
+        )
     }
 }
 

@@ -27,6 +27,7 @@ import com.example.stackdemo.data.model.Product
 import com.example.stackdemo.ui.cart.CartViewModel
 import com.example.stackdemo.ui.theme.BStackDark
 import com.example.stackdemo.ui.theme.BStackYellow
+import kotlinx.coroutines.launch
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,8 +44,11 @@ fun ProductListScreen(
     val uiState   by viewModel.uiState.collectAsStateWithLifecycle()
     val cartState by cartViewModel.uiState.collectAsStateWithLifecycle()
     var sortExpanded by remember { mutableStateOf(false) }
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
 
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = {
@@ -100,6 +104,10 @@ fun ProductListScreen(
                     }
                     DropdownMenu(expanded = sortExpanded, onDismissRequest = { sortExpanded = false }) {
                         DropdownMenuItem(
+                            text = { Text("Default") },
+                            onClick = { viewModel.setSortOrder(SortOrder.DEFAULT); sortExpanded = false }
+                        )
+                        DropdownMenuItem(
                             text = { Text("Price: Low → High") },
                             onClick = { viewModel.setSortOrder(SortOrder.PRICE_LOW_HIGH); sortExpanded = false }
                         )
@@ -124,7 +132,13 @@ fun ProductListScreen(
                         ProductCard(
                             product     = product,
                             onCardClick = { onProductClick(product.id) },
-                            onAddToCart = { cartViewModel.addProduct(product) }
+                            onAddToCart = {
+                                cartViewModel.addProduct(product)
+                                scope.launch {
+                                    snackbarHostState.currentSnackbarData?.dismiss()
+                                    snackbarHostState.showSnackbar("Added to cart")
+                                }
+                            }
                         )
                     }
                 }
