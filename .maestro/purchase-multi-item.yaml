@@ -33,7 +33,10 @@ tags: [e2e]
 - takeScreenshot: cart-multi-item
 
 - tapOn: "CHECKOUT"
-- runFlow: flows/login.yaml
+- runFlow:
+    file: flows/login.yaml
+    env:
+      USERNAME: demouser
 - assertVisible: "Order Summary"
 - assertVisible: '\$2597\.00'
 - runFlow: flows/fill-shipping.yaml

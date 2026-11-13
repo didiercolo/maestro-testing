@@ -50,6 +50,10 @@ Sub-flows in `flows/` (not run on their own):
   selectors are regular expressions (`'\$799\.00'`, `'25 Product\(s\) found\.'`).
 - "Add to cart" uses `index:` because the grid order is fixed by `products.json`
   (index 0 is iPhone 12; under the Samsung filter, index 1 is Galaxy S21+).
+- Shipping fields advance with `pressKey: Enter` (the form uses IME Next/Done). Do not tap the
+  small field labels or call `hideKeyboard`: the first can land under Gboard's floating
+  toolbar, the second presses Back and leaves the screen.
+- Pass `USERNAME` explicitly to `flows/login.yaml`; a default in its header overrides the caller.
 - Flows were written against the Pixel Tablet AVD. On a phone, add
   `scrollUntilVisible` before `SUBMIT` on the checkout screen.
 

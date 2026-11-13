@@ -11,14 +11,18 @@ tags: [product-list]
 # PL-05: Low -> High puts the cheapest product first
 - tapOn: "Order by"
 - tapOn: "Price: Low → High"
-- assertVisible: "Google Pixel 3a"
+- extendedWaitUntil:
+    visible: "Google Pixel 3a"
+    timeout: 5000
 - assertVisible: '\$299\.00'
 - takeScreenshot: product-sort-low-high
 
 # PL-06: High -> Low puts the most expensive product first
 - tapOn: "Price: Low → High"
 - tapOn: "Price: High → Low"
-- assertVisible: "Samsung Galaxy S21 Ultra"
+- extendedWaitUntil:
+    visible: "Samsung Galaxy S21 Ultra"
+    timeout: 5000
 - assertVisible: '\$1199\.00'
 - takeScreenshot: product-sort-high-low
 

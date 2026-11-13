@@ -46,9 +46,9 @@ tags: [smoke, product-list]
     text: "1"
 - takeScreenshot: product-list-badge-1
 
-# PL-10: tapping the card body opens Product Detail
+# PL-10: tapping the card body (the price line of the first card) opens Product Detail
 - tapOn:
-    text: "iPhone 12"
+    text: '\$799\.00'
     index: 0
 - assertVisible: "Product Details"
 - assertVisible: "iPhone 12"

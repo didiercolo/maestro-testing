@@ -1,15 +1,18 @@
 # Sub-flow: fill every shipping field with valid values.
 # Expects: Checkout screen visible.
+# Fields advance with Enter (IME Next) instead of tapping labels: the small floating
+# keyboard toolbar can cover the label centre and swallow the tap.
 appId: com.example.stackdemo
 ---
 - assertVisible: "Shipping Address"
 - tapOn: "First Name"
 - inputText: "Didier"
-- tapOn: "Last Name"
+- pressKey: Enter
 - inputText: "Tester"
-- tapOn: "Address"
+- pressKey: Enter
 - inputText: "123 Main St"
-- tapOn: "State/Province"
+- pressKey: Enter
 - inputText: "CA"
-- tapOn: "Postal Code"
+- pressKey: Enter
 - inputText: "94105"
+- pressKey: Enter

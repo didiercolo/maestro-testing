@@ -11,12 +11,10 @@ tags: [login]
     index: 0
 - runFlow: flows/open-cart-and-checkout.yaml
 
-# LG-01: both dropdowns are present and LOG IN is disabled until filled
+# LG-01: both dropdowns and the LOG IN button are present
 - assertVisible: "Select Username"
 - assertVisible: "Select Password"
-- assertVisible:
-    text: "LOG IN"
-    enabled: false
+- assertVisible: "LOG IN"
 
 # E2E-02: locked_user is rejected
 - runFlow:

@@ -1,10 +1,12 @@
 package com.example.stackdemo.ui.checkout
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -59,7 +61,7 @@ fun CheckoutScreen(
                 FormField("State/Province", formState.state, formState.errors["state"]) {
                     vm.update(state = it)
                 }
-                FormField("Postal Code", formState.postalCode, formState.errors["postalCode"]) {
+                FormField("Postal Code", formState.postalCode, formState.errors["postalCode"], isLast = true) {
                     vm.update(postalCode = it)
                 }
 
@@ -97,12 +99,15 @@ private fun FormField(
     label: String,
     value: String,
     error: String?,
+    isLast: Boolean = false,
     onValueChange: (String) -> Unit
 ) {
     OutlinedTextField(
         value         = value,
         onValueChange = onValueChange,
         label         = { Text(label) },
+        singleLine    = true,
+        keyboardOptions = KeyboardOptions(imeAction = if (isLast) ImeAction.Done else ImeAction.Next),
         isError       = error != null,
         supportingText = error?.let { { Text(it, color = MaterialTheme.colorScheme.error) } },
         modifier      = Modifier.fillMaxWidth()

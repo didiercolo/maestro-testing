@@ -10,7 +10,10 @@ tags: [checkout]
     text: "Add to cart"
     index: 0
 - runFlow: flows/open-cart-and-checkout.yaml
-- runFlow: flows/login.yaml
+- runFlow:
+    file: flows/login.yaml
+    env:
+      USERNAME: demouser
 
 # LG-02 / CK-08: checkout opens with the order summary
 - assertVisible: "Shipping Address"
@@ -30,14 +33,15 @@ tags: [checkout]
 # CK-06: non-numeric postal code
 - tapOn: "First Name"
 - inputText: "Didier"
-- tapOn: "Last Name"
+- pressKey: Enter
 - inputText: "Tester"
-- tapOn: "Address"
+- pressKey: Enter
 - inputText: "123 Main St"
-- tapOn: "State/Province"
+- pressKey: Enter
 - inputText: "CA"
-- tapOn: "Postal Code"
+- pressKey: Enter
 - inputText: "abc"
+- pressKey: Enter
 - tapOn: "SUBMIT"
 - assertVisible: "Enter a valid postal code"
 - assertNotVisible: "Your Order has been successfully placed."

@@ -25,7 +25,10 @@ tags: [smoke, e2e]
 - assertVisible: '\$799\.00'
 - tapOn: "CHECKOUT"
 
-- runFlow: flows/login.yaml
+- runFlow:
+    file: flows/login.yaml
+    env:
+      USERNAME: demouser
 - assertVisible: "Shipping Address"
 - runFlow: flows/fill-shipping.yaml
 - takeScreenshot: checkout-filled

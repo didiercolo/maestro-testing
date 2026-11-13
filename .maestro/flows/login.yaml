@@ -1,8 +1,6 @@
 # Sub-flow: log in through the dropdown selectors.
-# Expects: Login screen visible. Env: USERNAME (defaults to demouser).
+# Expects: Login screen visible. Env: USERNAME (required; a header default would override the caller).
 appId: com.example.stackdemo
-env:
-  USERNAME: demouser
 ---
 - assertVisible: "Select Username"
 - tapOn: "Select Username"
