@@ -54,6 +54,12 @@ Edit `app/src/main/assets/products.json` (25 products, 4 vendors) and `app/src/m
 Quit the Maestro Studio desktop app, then run `scripts/run-maestro.sh` (whole suite) or
 `scripts/run-maestro.sh purchase-happy-path` (one flow). See `.maestro/README.md`.
 
+## CI
+
+`.github/workflows/android-ci.yml` runs on every push to `main` and every pull request: unit tests and
+the debug build, then all Maestro flows on an x86_64 API 34 tablet emulator. The APK, unit test
+report, Maestro JUnit report, screenshots and logs are uploaded as workflow artifacts.
+
 ## Docs
 
 - `docs/DESIGN-SPEC.md` — screen-by-screen design and data model
