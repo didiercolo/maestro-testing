@@ -1,0 +1,9 @@
+{
+  "users": [
+    { "username": "demouser",               "password": "testingisfun99", "type": "normal" },
+    { "username": "image_not_loading_user", "password": "testingisfun99", "type": "broken_images" },
+    { "username": "existing_orders_user",   "password": "testingisfun99", "type": "existing_orders" },
+    { "username": "fav_user",               "password": "testingisfun99", "type": "favourites" },
+    { "username": "locked_user",            "password": "testingisfun99", "type": "locked" }
+  ]
+}
