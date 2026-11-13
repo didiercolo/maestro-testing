@@ -1,0 +1,54 @@
+# Product list: load, vendor filter, add to cart, open detail
+# Covers: PL-01, PL-02, PL-03, PL-04, PL-07, PL-08, PL-10, DV-01, DV-02, DV-03
+# Prerequisites: app installed on a running emulator/device
+appId: com.example.stackdemo
+name: Product list
+tags: [smoke, product-list]
+---
+- launchApp:
+    clearState: true
+
+# PL-01 / DV-01: products load from JSON
+- assertVisible: "BrowserStack"
+- assertVisible: '25 Product\(s\) found\.'
+- assertVisible: "iPhone 12"
+- assertVisible: '\$799\.00'
+- assertVisible: 'or 9 x \$88\.78'
+- takeScreenshot: product-list-loaded
+
+# PL-07: no cart badge on fresh launch
+- assertNotVisible:
+    text: "1"
+
+# PL-02 / DV-02: Apple filter
+- tapOn: "Apple"
+- assertVisible: '8 Product\(s\) found\.'
+- assertVisible: "iPhone 12"
+- takeScreenshot: product-list-apple-filter
+
+# PL-04: tapping the chip again shows all
+- tapOn: "Apple"
+- assertVisible: '25 Product\(s\) found\.'
+
+# PL-03 / DV-03: Samsung filter
+- tapOn: "Samsung"
+- assertVisible: '6 Product\(s\) found\.'
+- assertVisible: "Samsung Galaxy S21"
+- tapOn: "Samsung"
+- assertVisible: '25 Product\(s\) found\.'
+
+# PL-08: Add to cart from the first card (iPhone 12) updates badge
+- tapOn:
+    text: "Add to cart"
+    index: 0
+- assertVisible: "Added to cart"
+- assertVisible:
+    text: "1"
+- takeScreenshot: product-list-badge-1
+
+# PL-10: tapping the card body opens Product Detail
+- tapOn:
+    text: "iPhone 12"
+    index: 0
+- assertVisible: "Product Details"
+- assertVisible: "iPhone 12"

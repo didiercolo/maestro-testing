@@ -1,0 +1,53 @@
+# Product detail: content, add to cart, back navigation, quantity increments
+# Covers: PD-01, PD-02, PD-03, PD-04, PD-05, PD-06, EC-01
+appId: com.example.stackdemo
+name: Product detail
+tags: [smoke, product-detail]
+---
+- launchApp:
+    clearState: true
+
+# PD-01 / PD-02 / DV-04 / DV-05: iPhone 12 content
+- tapOn:
+    text: "iPhone 12"
+    index: 0
+- assertVisible: "Product Details"
+- assertVisible: "iPhone 12"
+- assertVisible: "Apple"
+- assertVisible: '\$799\.00'
+- assertVisible: 'or 9 x \$88\.78'
+- takeScreenshot: product-detail-iphone12
+
+# PD-04: ADD TO CART updates badge and shows snackbar
+- tapOn: "ADD TO CART"
+- assertVisible: "Added to cart"
+- assertVisible:
+    text: "1"
+
+# PD-06: adding again bumps quantity to 2
+- extendedWaitUntil:
+    visible: "ADD TO CART"
+    timeout: 5000
+- tapOn: "ADD TO CART"
+- assertVisible:
+    text: "2"
+
+# PD-05: back arrow returns to the list
+- tapOn: "Back"
+- assertVisible: '25 Product\(s\) found\.'
+
+# PD-03: a Samsung product shows the Samsung vendor chip
+- tapOn: "Samsung"
+- tapOn:
+    text: "Samsung Galaxy S21"
+    index: 0
+- assertVisible: "Product Details"
+- assertVisible: "Samsung Galaxy S21"
+- assertVisible: "Samsung"
+
+# EC-01: cart now holds iPhone 12 with quantity 2
+- tapOn: "Cart"
+- assertVisible: "iPhone 12"
+- assertVisible:
+    text: "2"
+- assertVisible: '\$1598\.00'

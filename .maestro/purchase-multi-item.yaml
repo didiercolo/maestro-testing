@@ -1,0 +1,47 @@
+# End-to-end: two products from two vendors, quantity bump, full checkout
+# Covers: E2E-03, PL-09
+appId: com.example.stackdemo
+name: Purchase multi item
+tags: [e2e]
+---
+- launchApp:
+    clearState: true
+
+# iPhone 12 ($799) from the unfiltered grid
+- tapOn:
+    text: "Add to cart"
+    index: 0
+# Samsung Galaxy S21+ ($999) is the second Samsung card
+- tapOn: "Samsung"
+- assertVisible: '6 Product\(s\) found\.'
+- tapOn:
+    text: "Add to cart"
+    index: 1
+- assertVisible:
+    text: "2"
+
+- tapOn: "Cart"
+- assertVisible: "iPhone 12"
+- assertVisible: "Samsung Galaxy S21+"
+- assertVisible: '\$1798\.00'
+
+# bump iPhone 12 to qty 2 -> 2597
+- tapOn:
+    text: "Increase"
+    index: 0
+- assertVisible: '\$2597\.00'
+- takeScreenshot: cart-multi-item
+
+- tapOn: "CHECKOUT"
+- runFlow: flows/login.yaml
+- assertVisible: "Order Summary"
+- assertVisible: '\$2597\.00'
+- runFlow: flows/fill-shipping.yaml
+- tapOn: "SUBMIT"
+
+- assertVisible: "Your Order has been successfully placed."
+- assertVisible: "iPhone 12"
+- assertVisible: "Samsung Galaxy S21+"
+- assertVisible: "Qty: 2"
+- assertVisible: '\$2597\.00'
+- takeScreenshot: confirmation-multi-item

@@ -1,0 +1,4 @@
+# Maestro workspace config. `maestro test .maestro/` runs every top-level flow;
+# files under flows/ are reusable sub-flows and are not run on their own.
+flows:
+  - "*.yaml"

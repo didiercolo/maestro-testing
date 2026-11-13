@@ -48,6 +48,12 @@ Edit `app/src/main/assets/products.json` (25 products, 4 vendors) and `app/src/m
 5. **Checkout** — shipping form (all fields required, postal code numeric) plus order summary; "SUBMIT".
 6. **Confirmation** — order number, receipt link, "CONTINUE SHOPPING »" clears the cart.
 
+## Maestro E2E flows
+
+`.maestro/` holds eight Maestro flows mapped to the test cases, plus reusable sub-flows.
+Quit the Maestro Studio desktop app, then run `scripts/run-maestro.sh` (whole suite) or
+`scripts/run-maestro.sh purchase-happy-path` (one flow). See `.maestro/README.md`.
+
 ## Docs
 
 - `docs/DESIGN-SPEC.md` — screen-by-screen design and data model

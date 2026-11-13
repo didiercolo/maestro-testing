@@ -1,0 +1,52 @@
+# End-to-end: filter, open detail, add to cart, log in, check out, confirm, continue shopping
+# Covers: E2E-01, CF-01, CF-02, CF-03, CF-04, CF-05, CA-09, CA-10
+appId: com.example.stackdemo
+name: Purchase happy path
+tags: [smoke, e2e]
+---
+- launchApp:
+    clearState: true
+- assertVisible: '25 Product\(s\) found\.'
+
+- tapOn: "Apple"
+- assertVisible: '8 Product\(s\) found\.'
+- tapOn:
+    text: "iPhone 12"
+    index: 0
+- assertVisible: "Product Details"
+- tapOn: "ADD TO CART"
+- assertVisible: "Added to cart"
+- tapOn: "Back"
+- assertVisible: '8 Product\(s\) found\.'
+
+# CA-09: cart survived the navigation
+- tapOn: "Cart"
+- assertVisible: "iPhone 12"
+- assertVisible: '\$799\.00'
+- tapOn: "CHECKOUT"
+
+- runFlow: flows/login.yaml
+- assertVisible: "Shipping Address"
+- runFlow: flows/fill-shipping.yaml
+- takeScreenshot: checkout-filled
+- tapOn: "SUBMIT"
+
+# CF-01 .. CF-03
+- assertVisible: "Your Order has been successfully placed."
+- assertVisible: 'Your order number is \d+\.'
+- assertVisible: "iPhone 12"
+- assertVisible: '\$799\.00'
+- takeScreenshot: confirmation
+
+# CF-04
+- tapOn: "Download order receipt"
+- assertVisible: "Receipt downloaded"
+
+# CF-05 / CA-10: continue shopping clears the cart
+- tapOn: "CONTINUE SHOPPING »"
+- assertVisible: '25 Product\(s\) found\.'
+- assertNotVisible:
+    text: "1"
+- tapOn: "Cart"
+- assertVisible: 'Add some products in the bag :\)'
+- takeScreenshot: cart-cleared-after-order

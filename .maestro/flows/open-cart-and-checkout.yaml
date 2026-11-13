@@ -1,0 +1,8 @@
+# Sub-flow: open the cart drawer and tap CHECKOUT.
+# Expects: at least one item in the cart.
+appId: com.example.stackdemo
+---
+- tapOn: "Cart"
+- assertVisible: "Bag"
+- tapOn: "CHECKOUT"
+- assertVisible: "Select Username"

@@ -1,0 +1,29 @@
+# Product list: price sorting
+# Covers: PL-05, PL-06
+appId: com.example.stackdemo
+name: Product sort
+tags: [product-list]
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Order by"
+
+# PL-05: Low -> High puts the cheapest product first
+- tapOn: "Order by"
+- tapOn: "Price: Low → High"
+- assertVisible: "Google Pixel 3a"
+- assertVisible: '\$299\.00'
+- takeScreenshot: product-sort-low-high
+
+# PL-06: High -> Low puts the most expensive product first
+- tapOn: "Price: Low → High"
+- tapOn: "Price: High → Low"
+- assertVisible: "Samsung Galaxy S21 Ultra"
+- assertVisible: '\$1199\.00'
+- takeScreenshot: product-sort-high-low
+
+# Default restores catalog order
+- tapOn: "Price: High → Low"
+- tapOn: "Default"
+- assertVisible: "Order by"
+- assertVisible: "iPhone 12"

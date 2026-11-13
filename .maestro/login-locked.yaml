@@ -1,0 +1,29 @@
+# Login: locked user sees an error and stays on the Login screen
+# Covers: LG-01, E2E-02
+appId: com.example.stackdemo
+name: Login locked user
+tags: [login]
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    text: "Add to cart"
+    index: 0
+- runFlow: flows/open-cart-and-checkout.yaml
+
+# LG-01: both dropdowns are present and LOG IN is disabled until filled
+- assertVisible: "Select Username"
+- assertVisible: "Select Password"
+- assertVisible:
+    text: "LOG IN"
+    enabled: false
+
+# E2E-02: locked_user is rejected
+- runFlow:
+    file: flows/login.yaml
+    env:
+      USERNAME: locked_user
+- assertVisible: "Your account has been locked."
+- assertVisible: "LOG IN"
+- assertNotVisible: "Shipping Address"
+- takeScreenshot: login-locked-error
