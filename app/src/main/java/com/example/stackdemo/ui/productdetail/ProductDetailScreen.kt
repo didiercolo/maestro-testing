@@ -98,8 +98,8 @@ fun ProductDetailScreen(
                     .crossfade(true)
                     .build(),
                 contentDescription = product.name,
-                contentScale       = ContentScale.Crop,
-                modifier           = Modifier.fillMaxWidth().aspectRatio(1f)
+                contentScale       = ContentScale.Fit,
+                modifier           = Modifier.fillMaxWidth().height(280.dp).padding(16.dp)
             )
 
             Column(modifier = Modifier.weight(1f).padding(16.dp)) {

@@ -172,8 +172,8 @@ private fun ProductCard(
                         .crossfade(true)
                         .build(),
                     contentDescription = product.name,
-                    contentScale       = ContentScale.Crop,
-                    modifier           = Modifier.fillMaxWidth().aspectRatio(1f)
+                    contentScale       = ContentScale.Fit,
+                    modifier           = Modifier.fillMaxWidth().aspectRatio(1.75f).padding(8.dp)
                 )
                 IconButton(onClick = { isFavourite = !isFavourite }, modifier = Modifier.align(Alignment.TopEnd)) {
                     Icon(

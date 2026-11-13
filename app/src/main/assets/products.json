@@ -1,29 +1,229 @@
 {
   "products": [
-    { "id": 1,  "name": "iPhone 12",              "vendor": "Apple",   "price": 799.00,  "installments": 9, "image": "iphone_12",           "description": "6.1-inch Super Retina XDR display, A14 Bionic chip, 5G capable." },
-    { "id": 2,  "name": "iPhone 12 Mini",         "vendor": "Apple",   "price": 699.00,  "installments": 9, "image": "iphone_12_mini",      "description": "5.4-inch compact design, A14 Bionic chip, 5G capable." },
-    { "id": 3,  "name": "iPhone 12 Pro",          "vendor": "Apple",   "price": 999.00,  "installments": 5, "image": "iphone_12_pro",       "description": "6.1-inch Pro display with LiDAR Scanner and ProRAW." },
-    { "id": 4,  "name": "iPhone 12 Pro Max",      "vendor": "Apple",   "price": 1099.00, "installments": 5, "image": "iphone_12_pro_max",   "description": "6.7-inch Pro Max display, largest battery in iPhone history." },
-    { "id": 5,  "name": "iPhone 11",              "vendor": "Apple",   "price": 599.00,  "installments": 9, "image": "iphone_11",           "description": "6.1-inch Liquid Retina display, A13 Bionic chip, dual camera." },
-    { "id": 6,  "name": "iPhone 11 Pro",          "vendor": "Apple",   "price": 799.00,  "installments": 9, "image": "iphone_11_pro",       "description": "5.8-inch Super Retina XDR, triple camera system, A13 Bionic." },
-    { "id": 7,  "name": "iPhone XR",              "vendor": "Apple",   "price": 499.00,  "installments": 9, "image": "iphone_xr",           "description": "6.1-inch Liquid Retina display, A12 Bionic chip." },
-    { "id": 8,  "name": "iPhone SE",              "vendor": "Apple",   "price": 399.00,  "installments": 9, "image": "iphone_se",           "description": "4.7-inch Retina HD display, A13 Bionic chip, most affordable iPhone." },
-    { "id": 9,  "name": "Samsung Galaxy S21",     "vendor": "Samsung", "price": 799.00,  "installments": 9, "image": "samsung_s21",         "description": "6.2-inch Dynamic AMOLED 2X, Exynos 2100, 8K video." },
-    { "id": 10, "name": "Samsung Galaxy S21+",    "vendor": "Samsung", "price": 999.00,  "installments": 5, "image": "samsung_s21_plus",    "description": "6.7-inch Dynamic AMOLED 2X, 4800mAh battery, 5G." },
-    { "id": 11, "name": "Samsung Galaxy S21 Ultra","vendor": "Samsung","price": 1199.00, "installments": 5, "image": "samsung_s21_ultra",   "description": "6.8-inch, 100x Space Zoom camera, built-in S Pen support." },
-    { "id": 12, "name": "Samsung Galaxy S20+",    "vendor": "Samsung", "price": 899.00,  "installments": 9, "image": "samsung_s20_plus",    "description": "6.7-inch Infinity-O display, 64MP camera, 5G." },
-    { "id": 13, "name": "Samsung Galaxy Note 20", "vendor": "Samsung", "price": 999.00,  "installments": 5, "image": "samsung_note_20",     "description": "6.7-inch Super AMOLED Plus, S Pen, 64MP triple camera." },
-    { "id": 14, "name": "Samsung Galaxy A52",     "vendor": "Samsung", "price": 499.00,  "installments": 9, "image": "samsung_a52",         "description": "6.5-inch Super AMOLED, 64MP quad camera, 5000mAh." },
-    { "id": 15, "name": "Google Pixel 5",         "vendor": "Google",  "price": 699.00,  "installments": 9, "image": "pixel_5",             "description": "6-inch OLED display, Snapdragon 765G, pure Android 11." },
-    { "id": 16, "name": "Google Pixel 4a",        "vendor": "Google",  "price": 349.00,  "installments": 9, "image": "pixel_4a",            "description": "5.81-inch OLED, 12.2MP camera with Night Sight, Android 11." },
-    { "id": 17, "name": "Google Pixel 4a 5G",     "vendor": "Google",  "price": 499.00,  "installments": 9, "image": "pixel_4a_5g",         "description": "6.2-inch OLED, Snapdragon 765G, 5G capable." },
-    { "id": 18, "name": "Google Pixel 4 XL",      "vendor": "Google",  "price": 599.00,  "installments": 9, "image": "pixel_4_xl",          "description": "6.3-inch QHD+ OLED, Snapdragon 855, face unlock." },
-    { "id": 19, "name": "Google Pixel 3a",        "vendor": "Google",  "price": 299.00,  "installments": 9, "image": "pixel_3a",            "description": "5.6-inch Full HD+ OLED, 12.2MP camera, headphone jack." },
-    { "id": 20, "name": "OnePlus 9 Pro",          "vendor": "OnePlus", "price": 969.00,  "installments": 5, "image": "oneplus_9_pro",       "description": "6.7-inch Fluid AMOLED, 120Hz, Hasselblad quad camera." },
-    { "id": 21, "name": "OnePlus 9",              "vendor": "OnePlus", "price": 729.00,  "installments": 9, "image": "oneplus_9",           "description": "6.55-inch Fluid AMOLED, 120Hz, Snapdragon 888, 65W fast charge." },
-    { "id": 22, "name": "OnePlus 8 Pro",          "vendor": "OnePlus", "price": 799.00,  "installments": 9, "image": "oneplus_8_pro",       "description": "6.78-inch Fluid AMOLED, 120Hz, Snapdragon 865, IP68." },
-    { "id": 23, "name": "OnePlus Nord",           "vendor": "OnePlus", "price": 399.00,  "installments": 9, "image": "oneplus_nord",        "description": "6.44-inch Fluid AMOLED, Snapdragon 765G, 5G, dual selfie cameras." },
-    { "id": 24, "name": "OnePlus 8T",             "vendor": "OnePlus", "price": 749.00,  "installments": 9, "image": "oneplus_8t",          "description": "6.55-inch Fluid AMOLED, 120Hz, 65W Warp Charge, quad camera." },
-    { "id": 25, "name": "OnePlus 7T",             "vendor": "OnePlus", "price": 599.00,  "installments": 9, "image": "oneplus_7t",          "description": "6.55-inch Fluid AMOLED, 90Hz, Snapdragon 855+, triple camera." }
+    {
+      "id": 1,
+      "name": "iPhone 12",
+      "vendor": "Apple",
+      "price": 799.0,
+      "installments": 9,
+      "image": "iphone12_device_info",
+      "description": "6.1-inch Super Retina XDR display, A14 Bionic chip, 5G capable."
+    },
+    {
+      "id": 2,
+      "name": "iPhone 12 Mini",
+      "vendor": "Apple",
+      "price": 699.0,
+      "installments": 9,
+      "image": "iphone12_device_info",
+      "description": "5.4-inch compact design, A14 Bionic chip, 5G capable."
+    },
+    {
+      "id": 3,
+      "name": "iPhone 12 Pro",
+      "vendor": "Apple",
+      "price": 999.0,
+      "installments": 5,
+      "image": "iphone12pro_device_info",
+      "description": "6.1-inch Pro display with LiDAR Scanner and ProRAW."
+    },
+    {
+      "id": 4,
+      "name": "iPhone 12 Pro Max",
+      "vendor": "Apple",
+      "price": 1099.0,
+      "installments": 5,
+      "image": "iphone12_device_info",
+      "description": "6.7-inch Pro Max display, largest battery in iPhone history."
+    },
+    {
+      "id": 5,
+      "name": "iPhone 11",
+      "vendor": "Apple",
+      "price": 599.0,
+      "installments": 9,
+      "image": "iphone11_device_info",
+      "description": "6.1-inch Liquid Retina display, A13 Bionic chip, dual camera."
+    },
+    {
+      "id": 6,
+      "name": "iPhone 11 Pro",
+      "vendor": "Apple",
+      "price": 799.0,
+      "installments": 9,
+      "image": "infocardiphone11pro",
+      "description": "5.8-inch Super Retina XDR, triple camera system, A13 Bionic."
+    },
+    {
+      "id": 7,
+      "name": "iPhone XR",
+      "vendor": "Apple",
+      "price": 499.0,
+      "installments": 9,
+      "image": "infoiphonexr",
+      "description": "6.1-inch Liquid Retina display, A12 Bionic chip."
+    },
+    {
+      "id": 8,
+      "name": "iPhone SE",
+      "vendor": "Apple",
+      "price": 399.0,
+      "installments": 9,
+      "image": "infocard",
+      "description": "4.7-inch Retina HD display, A13 Bionic chip, most affordable iPhone."
+    },
+    {
+      "id": 9,
+      "name": "Samsung Galaxy S21",
+      "vendor": "Samsung",
+      "price": 799.0,
+      "installments": 9,
+      "image": "samsung_s20_device_info",
+      "description": "6.2-inch Dynamic AMOLED 2X, Exynos 2100, 8K video."
+    },
+    {
+      "id": 10,
+      "name": "Samsung Galaxy S21+",
+      "vendor": "Samsung",
+      "price": 999.0,
+      "installments": 5,
+      "image": "samsung_s20plus_device_info",
+      "description": "6.7-inch Dynamic AMOLED 2X, 4800mAh battery, 5G."
+    },
+    {
+      "id": 11,
+      "name": "Samsung Galaxy S21 Ultra",
+      "vendor": "Samsung",
+      "price": 1199.0,
+      "installments": 5,
+      "image": "samsung_s20ultra_device_info",
+      "description": "6.8-inch, 100x Space Zoom camera, built-in S Pen support."
+    },
+    {
+      "id": 12,
+      "name": "Samsung Galaxy S20+",
+      "vendor": "Samsung",
+      "price": 899.0,
+      "installments": 9,
+      "image": "samsung_s20plus_device_info",
+      "description": "6.7-inch Infinity-O display, 64MP camera, 5G."
+    },
+    {
+      "id": 13,
+      "name": "Samsung Galaxy Note 20",
+      "vendor": "Samsung",
+      "price": 999.0,
+      "installments": 5,
+      "image": "note20_device_info",
+      "description": "6.7-inch Super AMOLED Plus, S Pen, 64MP triple camera."
+    },
+    {
+      "id": 14,
+      "name": "Samsung Galaxy A52",
+      "vendor": "Samsung",
+      "price": 499.0,
+      "installments": 9,
+      "image": "samsung_s10_device_info",
+      "description": "6.5-inch Super AMOLED, 64MP quad camera, 5000mAh."
+    },
+    {
+      "id": 15,
+      "name": "Google Pixel 5",
+      "vendor": "Google",
+      "price": 699.0,
+      "installments": 9,
+      "image": "googlepixel4_device_info",
+      "description": "6-inch OLED display, Snapdragon 765G, pure Android 11."
+    },
+    {
+      "id": 16,
+      "name": "Google Pixel 4a",
+      "vendor": "Google",
+      "price": 349.0,
+      "installments": 9,
+      "image": "googlepixel4_device_info",
+      "description": "5.81-inch OLED, 12.2MP camera with Night Sight, Android 11."
+    },
+    {
+      "id": 17,
+      "name": "Google Pixel 4a 5G",
+      "vendor": "Google",
+      "price": 499.0,
+      "installments": 9,
+      "image": "googlepixel3_device_info",
+      "description": "6.2-inch OLED, Snapdragon 765G, 5G capable."
+    },
+    {
+      "id": 18,
+      "name": "Google Pixel 4 XL",
+      "vendor": "Google",
+      "price": 599.0,
+      "installments": 9,
+      "image": "googlepixel4_device_info",
+      "description": "6.3-inch QHD+ OLED, Snapdragon 855, face unlock."
+    },
+    {
+      "id": 19,
+      "name": "Google Pixel 3a",
+      "vendor": "Google",
+      "price": 299.0,
+      "installments": 9,
+      "image": "googlepixel3_device_info",
+      "description": "5.6-inch Full HD+ OLED, 12.2MP camera, headphone jack."
+    },
+    {
+      "id": 20,
+      "name": "OnePlus 9 Pro",
+      "vendor": "OnePlus",
+      "price": 969.0,
+      "installments": 5,
+      "image": "oneplus8_device_info",
+      "description": "6.7-inch Fluid AMOLED, 120Hz, Hasselblad quad camera."
+    },
+    {
+      "id": 21,
+      "name": "OnePlus 9",
+      "vendor": "OnePlus",
+      "price": 729.0,
+      "installments": 9,
+      "image": "oneplus8_device_info",
+      "description": "6.55-inch Fluid AMOLED, 120Hz, Snapdragon 888, 65W fast charge."
+    },
+    {
+      "id": 22,
+      "name": "OnePlus 8 Pro",
+      "vendor": "OnePlus",
+      "price": 799.0,
+      "installments": 9,
+      "image": "oneplus8_device_info",
+      "description": "6.78-inch Fluid AMOLED, 120Hz, Snapdragon 865, IP68."
+    },
+    {
+      "id": 23,
+      "name": "OnePlus Nord",
+      "vendor": "OnePlus",
+      "price": 399.0,
+      "installments": 9,
+      "image": "oneplus6t_infocard",
+      "description": "6.44-inch Fluid AMOLED, Snapdragon 765G, 5G, dual selfie cameras."
+    },
+    {
+      "id": 24,
+      "name": "OnePlus 8T",
+      "vendor": "OnePlus",
+      "price": 749.0,
+      "installments": 9,
+      "image": "oneplus8_device_info",
+      "description": "6.55-inch Fluid AMOLED, 120Hz, 65W Warp Charge, quad camera."
+    },
+    {
+      "id": 25,
+      "name": "OnePlus 7T",
+      "vendor": "OnePlus",
+      "price": 599.0,
+      "installments": 9,
+      "image": "oneplus7t_deviceinfo",
+      "description": "6.55-inch Fluid AMOLED, 90Hz, Snapdragon 855+, triple camera."
+    }
   ]
 }
