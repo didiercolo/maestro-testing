@@ -1,15 +1,19 @@
 # Sub-flow: cold-start the app with clean state and wait until the product list is drawn.
-# The long timeout covers slow software-rendered CI emulators.
+# Retries the launch because on slow CI emulators clearing state can race with the new
+# process: the system kills the freshly started app and it never attaches.
 appId: com.example.stackdemo
 ---
-- launchApp:
-    clearState: true
-# Slow emulators can raise a system ANR dialog ("... isn't responding") that hides the app.
-- runFlow:
-    when:
-      visible: ".*isn't responding.*"
+- retry:
+    maxRetries: 3
     commands:
-      - tapOn: "Wait"
-- extendedWaitUntil:
-    visible: "Add to cart"
-    timeout: 60000
+      - launchApp:
+          clearState: true
+      # Slow emulators can raise a system ANR dialog ("... isn't responding") that hides the app.
+      - runFlow:
+          when:
+            visible: ".*isn't responding.*"
+          commands:
+            - tapOn: "Wait"
+      - extendedWaitUntil:
+          visible: "Add to cart"
+          timeout: 25000
