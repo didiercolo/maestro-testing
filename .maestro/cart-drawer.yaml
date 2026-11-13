@@ -4,8 +4,7 @@ appId: com.example.stackdemo
 name: Cart drawer
 tags: [smoke, cart]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 
 # CA-01: empty state
 - tapOn: "Cart"

@@ -4,8 +4,7 @@ appId: com.example.stackdemo
 name: Purchase happy path
 tags: [smoke, e2e]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 - assertVisible: '25 Product\(s\) found\.'
 
 - tapOn: "Apple"

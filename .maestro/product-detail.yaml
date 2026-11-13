@@ -4,8 +4,7 @@ appId: com.example.stackdemo
 name: Product detail
 tags: [smoke, product-detail]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 
 # PD-01 / PD-02 / DV-04 / DV-05: iPhone 12 content
 - tapOn:

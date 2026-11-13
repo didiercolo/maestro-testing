@@ -4,8 +4,7 @@ appId: com.example.stackdemo
 name: Login locked user
 tags: [login]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 - tapOn:
     text: "Add to cart"
     index: 0

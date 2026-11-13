@@ -1,0 +1,9 @@
+# Sub-flow: cold-start the app with clean state and wait until the product list is drawn.
+# The long timeout covers slow software-rendered CI emulators.
+appId: com.example.stackdemo
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "Add to cart"
+    timeout: 60000

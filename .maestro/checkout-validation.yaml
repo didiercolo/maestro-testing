@@ -4,8 +4,7 @@ appId: com.example.stackdemo
 name: Checkout validation
 tags: [checkout]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 - tapOn:
     text: "Add to cart"
     index: 0

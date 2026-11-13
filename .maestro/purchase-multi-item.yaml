@@ -4,8 +4,7 @@ appId: com.example.stackdemo
 name: Purchase multi item
 tags: [e2e]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 
 # iPhone 12 ($799) from the unfiltered grid
 - tapOn:

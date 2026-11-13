@@ -5,8 +5,7 @@ appId: com.example.stackdemo
 name: Product list
 tags: [smoke, product-list]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 
 # PL-01 / DV-01: products load from JSON
 - assertVisible: "BrowserStack"

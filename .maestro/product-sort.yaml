@@ -4,8 +4,7 @@ appId: com.example.stackdemo
 name: Product sort
 tags: [product-list]
 ---
-- launchApp:
-    clearState: true
+- runFlow: flows/launch-app.yaml
 - assertVisible: "Order by"
 
 # PL-05: Low -> High puts the cheapest product first
