@@ -20,7 +20,7 @@ private val LightColors = lightColorScheme(
 fun StackDemoTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = LightColors,
-        typography  = Typography,
+        typography  = AppTypography,
         content     = content
     )
 }
