@@ -55,13 +55,14 @@ fun ProductListScreen(
                 },
                 actions = {
                     TextButton(onClick = onSignInClick) { Text("Sign In") }
-                    BadgedBox(
-                        badge = {
-                            if (cartState.itemCount > 0) Badge { Text(cartState.itemCount.toString()) }
-                        },
-                        modifier = Modifier.padding(end = 16.dp).clickable { onCartClick() }
-                    ) {
-                        Icon(Icons.Default.ShoppingCart, contentDescription = "Cart")
+                    IconButton(onClick = onCartClick, modifier = Modifier.padding(end = 8.dp)) {
+                        BadgedBox(
+                            badge = {
+                                if (cartState.itemCount > 0) Badge { Text(cartState.itemCount.toString()) }
+                            }
+                        ) {
+                            Icon(Icons.Default.ShoppingCart, contentDescription = "Cart")
+                        }
                     }
                 }
             )

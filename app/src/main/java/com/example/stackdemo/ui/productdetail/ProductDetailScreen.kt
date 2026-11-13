@@ -1,6 +1,5 @@
 package com.example.stackdemo.ui.productdetail
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -67,13 +66,14 @@ fun ProductDetailScreen(
                     }
                 },
                 actions = {
-                    BadgedBox(
-                        badge = {
-                            if (cartState.itemCount > 0) Badge { Text(cartState.itemCount.toString()) }
-                        },
-                        modifier = Modifier.padding(end = 16.dp).clickable { onCartClick() }
-                    ) {
-                        Icon(Icons.Default.ShoppingCart, contentDescription = "Cart")
+                    IconButton(onClick = onCartClick, modifier = Modifier.padding(end = 8.dp)) {
+                        BadgedBox(
+                            badge = {
+                                if (cartState.itemCount > 0) Badge { Text(cartState.itemCount.toString()) }
+                            }
+                        ) {
+                            Icon(Icons.Default.ShoppingCart, contentDescription = "Cart")
+                        }
                     }
                 }
             )
