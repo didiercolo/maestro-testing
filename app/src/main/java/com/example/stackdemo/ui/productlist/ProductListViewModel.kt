@@ -46,9 +46,10 @@ class ProductListViewModel(private val repo: ProductRepository) : ViewModel() {
 
     fun setSortOrder(order: SortOrder) {
         _uiState.update { state ->
+            val base = state.selectedVendor?.let(repo::getByVendor) ?: repo.getAll()
             state.copy(
                 sortOrder = order,
-                products  = applySortOrder(state.products, order)
+                products  = applySortOrder(base, order)
             )
         }
     }

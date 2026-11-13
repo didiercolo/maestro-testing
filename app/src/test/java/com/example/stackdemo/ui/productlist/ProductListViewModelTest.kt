@@ -67,4 +67,11 @@ class ProductListViewModelTest {
         val prices = vm.uiState.value.products.map { it.price }
         assertEquals(prices.sortedDescending(), prices)
     }
+
+    @Test
+    fun `sortOrder DEFAULT after PRICE_LOW_HIGH restores original order`() {
+        vm.setSortOrder(SortOrder.PRICE_LOW_HIGH)
+        vm.setSortOrder(SortOrder.DEFAULT)
+        assertEquals(products, vm.uiState.value.products)
+    }
 }
