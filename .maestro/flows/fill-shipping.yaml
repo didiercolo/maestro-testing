@@ -13,4 +13,3 @@ appId: com.example.stackdemo
 - inputText: "CA"
 - tapOn: "Postal Code"
 - inputText: "94105"
-- hideKeyboard

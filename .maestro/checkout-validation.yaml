@@ -38,7 +38,6 @@ tags: [checkout]
 - inputText: "CA"
 - tapOn: "Postal Code"
 - inputText: "abc"
-- hideKeyboard
 - tapOn: "SUBMIT"
 - assertVisible: "Enter a valid postal code"
 - assertNotVisible: "Your Order has been successfully placed."
